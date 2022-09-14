@@ -1,0 +1,6 @@
+rootProject.name = 'bovespa-system-test'
+include 'domain'
+include 'services'
+include 'repository'
+include 'web'
+
