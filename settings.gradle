@@ -3,4 +3,5 @@ include 'domain'
 include 'services'
 include 'repository'
 include 'web'
+include 'integration'
 
