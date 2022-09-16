@@ -1,6 +1,5 @@
 dependencies {
     implementation project(':services')
-    implementation project(':domain')
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     compileOnly 'org.projectlombok:lombok'
