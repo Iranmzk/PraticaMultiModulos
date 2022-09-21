@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StocksRepository extends MongoRepository<StockEntity,String> {
-    StockEntity findBySymbolContains(String symbol);
 }

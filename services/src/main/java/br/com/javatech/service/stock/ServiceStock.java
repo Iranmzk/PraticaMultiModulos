@@ -39,4 +39,15 @@ public class ServiceStock {
     public StockEntity create(StockEntity stock){
         return repository.save(stock);
     }
+
+    public void deleteAllById(List<String> id){
+        repository.deleteAllById(id);
+    }
+
+    public List<StockServiceModel> findAll() {
+        return repository.findAll()
+                .stream()
+                .map(EntityToService::entityToService)
+                .toList();
+    }
 }
