@@ -4,4 +4,5 @@ include 'services'
 include 'repository'
 include 'web'
 include 'integration'
+include 'config'
 
