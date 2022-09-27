@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      enabled: true
+      server:
+        git:
+          uri: https://github.com/Iranmzk/repositorio-configuracao
+server:
+  port: 8888
+  servlet:
+    context-path: /bovespa-server
+
+
+
+
+
+
+
+
+
+#spring:
+#  application:
+#    name: config-server-teste
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/Iranmzk/repositorio-configuracao
+#      enabled: true
+#
+#  data:
+#    mongodb:
+#      host: localhost
+#      port: 55000
+#
+#server:
+#  port: 8888
+#  servlet:
+#    context-path: /config-server-teste
+
