@@ -1,12 +1,12 @@
 ext {
-    set('mapstructVersion', "1.4.2.Final")
+    set('mapstructVersion', "1.5.2.Final")
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    annotationProcessor "org.mapstruct:mapstruct-processor:1.4.2.Final"
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
     implementation "org.mapstruct:mapstruct:${mapstructVersion}"
     implementation project (':repository')
     implementation project (':integration')
