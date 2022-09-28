@@ -3,7 +3,7 @@ package br.com.javatech.service.stock;
 import br.com.javatech.dao.stocks.StocksRepository;
 import br.com.javatech.dao.stocks.mapper.IntegrationToEntity;
 import br.com.javatech.dao.stocks.model.StockEntity;
-import br.com.javatech.service.stock.mapper.EntityToService;
+import br.com.javatech.service.stock.mapper.EntityToServiceMap;
 import br.com.javatech.service.stock.model.StockServiceModel;
 import br.com.javatech.yahoo.YahooFinancesIntegration;
 import lombok.AllArgsConstructor;
@@ -22,18 +22,13 @@ public class ServiceStock {
     public Optional<StockEntity> findByIdContains(String symbol){
         return repository.findById(symbol);
     }
-    public List<StockServiceModel> findAllStock(){
-        return repository.findAll()
-                .stream()
-                .map(EntityToService::entityToService)
-                .toList();
-    }
+
 
     public StockServiceModel findStockIntegration(String symbol){
         return Optional.ofNullable(integration.findStock(symbol))
                 .map(IntegrationToEntity::integrationToEntity)
                 .map(repository::save)
-                .map(EntityToService::entityToService)
+                .map(EntityToServiceMap::mapFrom)
                 .orElseThrow();
     }
     public StockEntity create(StockEntity stock){
@@ -47,7 +42,7 @@ public class ServiceStock {
     public List<StockServiceModel> findAll() {
         return repository.findAll()
                 .stream()
-                .map(EntityToService::entityToService)
+                .map(EntityToServiceMap::mapFrom)
                 .toList();
     }
 }

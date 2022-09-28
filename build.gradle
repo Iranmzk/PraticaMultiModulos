@@ -45,6 +45,9 @@ subprojects{
 // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-config-server
 //        implementation 'org.springframework.cloud:spring-cloud-config-server:3.1.1'
 //        implementation 'org.springframework.boot:spring-boot-starter-web'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
     }
 
     tasks.named('test') {

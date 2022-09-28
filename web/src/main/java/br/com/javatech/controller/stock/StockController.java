@@ -3,12 +3,13 @@ package br.com.javatech.controller.stock;
 import br.com.javatech.controller.stock.facade.ControllerFacade;
 import br.com.javatech.controller.stock.model.StockControllerModel;
 import lombok.AllArgsConstructor;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@RefreshScope
+@RefreshScope
 @RestController
 @RequestMapping("/stocks")
 @AllArgsConstructor

@@ -1,7 +1,7 @@
 package br.com.javatech.service.stock.facade;
 
 import br.com.javatech.service.stock.ServiceStock;
-import br.com.javatech.service.stock.mapper.EntityToService;
+import br.com.javatech.service.stock.mapper.EntityToServiceMap;
 import br.com.javatech.service.stock.model.StockServiceModel;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ public class ServiceFacade {
 
     public StockServiceModel findStock(String symbol){
         return serviceStock.findByIdContains(symbol)
-                .map(EntityToService::entityToService)
+                .map(EntityToServiceMap::mapFrom)
                 .orElseGet(() -> serviceStock.findStockIntegration(symbol));
     }
 

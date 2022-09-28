@@ -1,6 +1,8 @@
 dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    implementation 'org.mapstruct:mapstruct:1.5.2.Final'
+    implementation 'org.mapstruct:mapstruct-processor:1.5.2.Final'
     implementation project(':integration')
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
